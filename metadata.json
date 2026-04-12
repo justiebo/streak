@@ -1,0 +1,5 @@
+{
+  "name": "STREAK",
+  "description": "Daily onchain commitment tracker for the Base ecosystem. Set a goal, check in daily, build your streak.",
+  "requestFramePermissions": []
+}
