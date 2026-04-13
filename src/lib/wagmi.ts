@@ -14,7 +14,7 @@ export const getBuilderSuffix = (builderCode: string) => {
   return suffix as `0x${string}`;
 };
 
-const BUILDER_CODE = process.env.VITE_BUILDER_CODE || 'STREAK-APP';
+export const BUILDER_CODE = process.env.VITE_BUILDER_CODE || 'bc_n3cuyjbp';
 
 export const config = createConfig({
   chains: [base, baseSepolia],
