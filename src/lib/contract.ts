@@ -1,4 +1,4 @@
-export const STREAK_CONTRACT_ADDRESS = (process.env.VITE_STREAK_ADDRESS || '0x0000000000000000000000000000000000000000') as `0x${string}`;
+export const STREAK_CONTRACT_ADDRESS = (process.env.VITE_STREAK_ADDRESS || '0x854469b2E8b516404D6bAdc70608A7FC50670C9D') as `0x${string}`;
 
 export const STREAK_ABI = [
   {
@@ -9,22 +9,10 @@ export const STREAK_ABI = [
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_user",
-        "type": "address"
-      }
-    ],
-    "name": "canCheckIn",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
+    "inputs": [],
+    "name": "habitCheckIn",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -39,17 +27,12 @@ export const STREAK_ABI = [
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "currentStreak",
+        "name": "visitStreak",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "bestStreak",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "totalCheckIns",
+        "name": "habitStreak",
         "type": "uint256"
       },
       {
@@ -59,7 +42,12 @@ export const STREAK_ABI = [
       },
       {
         "internalType": "uint256",
-        "name": "lastCheckInTimestamp",
+        "name": "lastVisitTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastHabitTimestamp",
         "type": "uint256"
       },
       {
@@ -106,7 +94,7 @@ export const STREAK_ABI = [
         "type": "uint256"
       }
     ],
-    "name": "CheckedIn",
+    "name": "AppCheckedIn",
     "type": "event"
   },
   {
@@ -140,11 +128,17 @@ export const STREAK_ABI = [
       {
         "indexed": false,
         "internalType": "uint256",
+        "name": "currentStreak",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
         "name": "timestamp",
         "type": "uint256"
       }
     ],
-    "name": "StreakReset",
+    "name": "HabitCheckedIn",
     "type": "event"
   }
 ] as const;
